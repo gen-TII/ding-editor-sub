@@ -1,0 +1,35 @@
+__pycache__/
+*.py[cod]
+*.so
+*.dylib
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+.env/
+.conda/
+
+# IDE / editor
+.vscode/
+.idea/
+.DS_Store
+.backup*
+
+# Hydra outputs
+multirun/
+outputs*/
+
+# Test artefacts
+.pytest_cache/
+
+# Other 
+utils/
+!src/ding/utils/
+
+assets/logo_tii.jpg

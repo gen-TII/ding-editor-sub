@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DInG-Editor | Project Page</title>
+    <meta
+      name="description"
+      content="When Test-Time Guidance Is Enough: Fast Image and Video Editing with Diffusion Guidance"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#top">DInG-Editor</a>
+        <nav class="top-nav">
+          <a href="#abstract">Abstract</a>
+          <a href="#method">Method</a>
+          <a href="#dataflow">Data Flow</a>
+          <a href="#results">Results</a>
+          <a href="#resources">Resources</a>
+          <a href="#citation">Citation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero container reveal">
+        <!-- <p class="eyebrow">ICLR 2026 Workshop</p> -->
+        <h1>
+          When Test-Time Guidance Is Enough:<br />
+          Fast Image and Video Editing with <span>Diffusion Guidance</span>
+        </h1>
+        <p class="subtitle">
+          DInG-Editor is a training-free toolkit for posterior-sampling inpainting and editing,
+          unifying image, video, and audio workflows with pluggable denoisers and samplers.
+        </p>
+
+        <div class="author-list">
+          <span>Anonymous authors</span>
+          <!-- <span>Your Name<sup>1</sup></span> -->
+          <!-- <span>Collaborator Name<sup>2</sup></span>
+          <span>Collaborator Name<sup>1</sup></span> -->
+        </div>
+        <p class="affiliations">
+          <!-- <sup>1</sup>Your Lab / Institution &nbsp;&nbsp; <sup>2</sup>Your Partner Institution -->
+          Under double-blind review
+        </p>
+
+        <div class="cta-row">
+          <a class="btn" href="#" target="_blank" rel="noopener">Paper</a>
+          <a class="btn" href="#" target="_blank" rel="noopener">ArXiv</a>
+          <a class="btn" href="https://github.com/" target="_blank" rel="noopener">Code</a>
+          <a class="btn ghost" href="#resources">Model & Data</a>
+        </div>
+      </section>
+
+      <section class="container results-carousel reveal" id="results">
+        <h2>Editing Examples</h2>
+        <p class="results-intro">Each slide shows a pair: one image edit and one video edit.</p>
+
+        <div class="carousel" data-carousel>
+          <button class="carousel-btn prev" type="button" aria-label="Previous example" data-carousel-prev>
+            &#8592;
+          </button>
+
+          <div class="carousel-track">
+            <div class="carousel-slide is-active" data-carousel-slide>
+              <div class="paired-grid">
+                <div class="example-card">
+                  <h3>Image Editing Example 1</h3>
+                  <img src="assets/example_png/demo1_image_edit_ding.png" alt="Image editing example 1" class="demo-media demo-image" />
+                </div>
+                <div class="example-card">
+                  <h3>Video Editing Example 1</h3>
+                  <img src="assets/example_gif/demo1_video_edit_ding.gif" alt="Video editing example 1" class="demo-media demo-video" />
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide" data-carousel-slide>
+              <div class="paired-grid">
+                <div class="example-card">
+                  <h3>Image Editing Example 2</h3>
+                  <img src="assets/example_png/demo2_image_edit_ding.png" alt="Image editing example 2" class="demo-media demo-image" />
+                </div>
+                <div class="example-card">
+                  <h3>Video Editing Example 2</h3>
+                  <img src="assets/example_gif/demo2_video_edit_ding.gif" alt="Video editing example 2" class="demo-media demo-video" />
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide" data-carousel-slide>
+              <div class="paired-grid">
+                <div class="example-card">
+                  <h3>Image Editing Example 3</h3>
+                  <img src="assets/example_png/demo3_image_edit_ding.png" alt="Image editing example 3" class="demo-media demo-image" />
+                </div>
+                <div class="example-card">
+                  <h3>Video Editing Example 3</h3>
+                  <img src="assets/example_gif/demo3_video_edit_ding.gif" alt="Video editing example 3" class="demo-media demo-video" />
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide" data-carousel-slide>
+              <div class="paired-grid">
+                <div class="example-card">
+                  <h3>Image Editing Example 4</h3>
+                  <img src="assets/example_png/demo4_image_edit_ding.png" alt="Image editing example 4" class="demo-media demo-image" />
+                </div>
+                <div class="example-card">
+                  <h3>Video Editing Example 4</h3>
+                  <img src="assets/example_gif/demo4_video_edit_ding.gif" alt="Video editing example 4" class="demo-media demo-video" />
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide" data-carousel-slide>
+              <div class="paired-grid">
+                <div class="example-card">
+                  <h3>Image Editing Example 5</h3>
+                  <img src="assets/example_png/demo5_image_edit_ding.png" alt="Image editing example 5" class="demo-media demo-image" />
+                </div>
+                <div class="example-card">
+                  <h3>Video Editing Example 5</h3>
+                  <img src="assets/example_gif/demo5_video_edit_ding.gif" alt="Video editing example 5" class="demo-media demo-video" />
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide" data-carousel-slide>
+              <div class="paired-grid">
+                <div class="example-card">
+                  <h3>Image Editing Example 6</h3>
+                  <img src="assets/example_png/demo6_image_edit_ding.png" alt="Image editing example 6" class="demo-media demo-image" />
+                </div>
+                <div class="example-card">
+                  <h3>Video Editing Example 6</h3>
+                  <img src="assets/example_gif/demo6_video_edit_ding.gif" alt="Video editing example 6" class="demo-media demo-video" />
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-slide" data-carousel-slide>
+              <div class="paired-grid">
+                <div class="example-card">
+                  <h3>Image Editing Example 7</h3>
+                  <img src="assets/example_png/demo7_image_edit_ding.png" alt="Image editing example 7" class="demo-media demo-image" />
+                </div>
+                <div class="example-card">
+                  <h3>Video Editing Example 7</h3>
+                  <img src="assets/example_gif/demo7_video_edit_ding.gif" alt="Video editing example 7" class="demo-media demo-video" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-btn next" type="button" aria-label="Next example" data-carousel-next>
+            &#8594;
+          </button>
+        </div>
+
+        <div class="carousel-dots" data-carousel-dots aria-label="Example selector"></div>
+      </section>
+
+      <section class="container text-block reveal" id="abstract">
+        <h2>Abstract</h2>
+        <p>
+          Text-driven image and video editing can be naturally cast as inpainting problems, where masked regions are reconstructed to remain consistent with both the observed content and the editing prompt. Recent advances in test-time guidance for diffusion and flow models provide a principled framework for this task; however, existing methods rely on costly vector-Jacobian product (VJP) computations to approximate the intractable guidance term, limiting their practical applicability. Building upon the recent work of <a href="https://openreview.net/pdf?id=5F93RfQ12T" target="_blank" rel="noopener">Moufad et al. (2025)</a>, we provide theoretical insights into their VJP-free approximation and substantially extend their empirical evaluation to large-scale image and video editing benchmarks. Our results demonstrate that test-time guidance alone can achieve performance comparable to, and in some cases surpass, training-based methods.
+        </p>
+      </section>
+
+      <section class="container method reveal" id="method">
+        <h2>Method Overview</h2>
+        <div class="method-panel">
+          <img src="assets/ding-diagram-uml.png" alt="DInG method diagram" />
+          <div>
+            <p>
+              DInG separates editing control from denoiser implementation: samplers operate over a
+              shared denoiser interface (<code>pred_velocity</code>, <code>encode</code>, <code>decode</code>) while runners handle
+              Hydra-based orchestration for single samples and dataset pipelines.
+            </p>
+            <ul>
+              <li>Unified runners: <code>inpaint_img</code>, <code>inpaint_vid</code>, <code>inpaint_audio</code></li>
+              <li>Dataset workflows: inpaint and evaluate image/video benchmarks.</li>
+              <li>Supported denoisers: Flux, SD3 variants, LTX, Wan, Stable Audio 1.</li>
+              <li>Supported samplers: Ding, Flair, FlowChef, DiffPIR, DDNM, Blended Diffusion.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="container text-block reveal" id="dataflow">
+        <h2>Data Flow (Video Editing)</h2>
+        <figure class="dataflow-figure">
+          <img src="assets/ding_diagram.png" alt="Overview of the editing pipeline for video modalities" />
+          <figcaption class="dataflow-caption">Overview of the editing pipeline for video modalities. The input video and mask are lifted to the latent space for inpainting. A pre-trained and frozen diffusion model is used with a posterior sampler to guide the generation toward prompt-aligned reconstructions, which is then decoded back to pixel space.</figcaption>
+        </figure>
+      </section>
+
+      <section class="container text-block reveal" id="resources">
+        <h2>Resources</h2>
+        <div class="resource-grid">
+          <a class="resource" href="https://huggingface.co/TencentARC/VideoPainter/resolve/main/i3d_rgb_imagenet.pt" target="_blank" rel="noopener">
+            <h3>I3D Checkpoint</h3>
+            <p>InceptionI3D checkpoint for VFID feature extraction in video evaluation.</p>
+          </a>
+          <a class="resource" href="https://huggingface.co/datasets/phiyodr/InpaintCOCO" target="_blank" rel="noopener">
+            <h3>InpaintCOCO (512px)</h3>
+            <p>Image editing benchmark dataset used for inpainting evaluation.</p>
+          </a>
+          <a class="resource" href="https://huggingface.co/datasets/BryanW/HumanEdit" target="_blank" rel="noopener">
+            <h3>HumanEdit (1024px)</h3>
+            <p>Image editing benchmark dataset for high-resolution edit quality assessment.</p>
+          </a>
+          <a class="resource" href="https://huggingface.co/datasets/TencentARC/VPBench" target="_blank" rel="noopener">
+            <h3>VPBench</h3>
+            <p>Video editing benchmark dataset for temporal and reconstruction evaluation.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="container text-block reveal">
+        <h2>Quickstart</h2>
+        <pre><code>python -m venv .venv
+source .venv/bin/activate
+pip install -e .
+
+python -m ding.runner.inpaint_img \
+  image_path=/path/to/input_image.png \
+  mask_path=/path/to/mask.png
+
+python -m ding.runner.inpaint_vid_dataset
+python -m ding.runner.evaluate_vid_dataset</code></pre>
+      </section>
+
+      <section class="container text-block reveal" id="citation">
+        <h2>Citation</h2>
+        <pre><code>@article{ding-editor2026,
+  title={When Test-Time Guidance Is Enough: Fast Image and Video Editing with Diffusion Guidance},
+  author={Anonymous authors},
+  journal={Preprint},
+  year={2026}
+}</code></pre>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>The code and website will be deanonymized afterward.</p>
+        <!-- <p>Built for the DInG project. Adapt text, links, and media for your final release.</p> -->
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
