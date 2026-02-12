@@ -1,0 +1,45 @@
+# Default configuration for ding.runner.inpaint_img
+
+defaults:
+  - _self_
+
+hydra:
+  run:
+    dir: outputs/inpaint_img/${now:%Y%m%d_%H%M%S}
+
+seed: 42
+device: cuda:0
+model_dtype: bfloat16
+
+image_path: /path/to/input_image.png
+mask_path: /path/to/mask.png
+bbox: null                                # [x0, y0, x1, y1]
+dilate_mask : false
+output_dir: ${hydra:run.dir}
+steps: 50
+show_progress: true
+
+denoiser:
+  name: flux
+  params:
+    model_cpu_offload: false              # choose either model_cpu_offload or sequential_cpu_offload
+    sequential_cpu_offload: false
+    attention_slicing: false
+    vae_slicing: false
+  cache_dir: null                         # path to cache the denoiser model, if null it will use the default huggingface cache dir 
+
+sampler:
+  name: ding
+
+conditioning:
+  prompts: ""
+  negative_prompts: ""
+  guidance_scale: 3.0                     # SD3 CFG scale and Flux guidance scale tensor.
+  true_cfg_scale: 1.0                     # Flux True CFG scale. Enabled when `true_cfg_scale` > 1 and `negative_prompt` is provided. Default to 1.0
+  n_images_per_prompt: 1
+
+image:
+  target_height: 1024                     # multiple of 8 if set
+  target_width: 1024                      # multiple of 8 if set
+
+

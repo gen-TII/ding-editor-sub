@@ -1,0 +1,32 @@
+# Default configuration for ding.runner.evaluate_vid_dataset
+
+defaults:
+  - _self_
+
+hydra:
+  run:
+    dir: outputs/evaluate_vid/${now:%Y%m%d_%H%M%S}
+
+device: cuda:0
+output_dir: ${hydra:run.dir}
+seed: 42
+
+experiment:
+  denoiser: wan
+  sampler: ding
+  steps: 50
+  guidance_scale: 5.0
+
+data:
+  gt_dir: /path/to/ground_truth_videos
+  gen_dir: /path/to/generated_videos
+  metadata_path: ${data.gt_dir}/metadata.json
+  max_videos: null
+
+metrics:
+  compute_vfid: true
+  vfid_ckpt: /path/to/i3d_rgb_imagenet.pt
+
+io:
+  metrics_filename: metrics.json
+  summary_filename: summary.json

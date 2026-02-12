@@ -1,0 +1,46 @@
+# Default configuration for ding.runner.inpaint_vid
+
+defaults:
+  - _self_
+
+hydra:
+  run:
+    dir: outputs/inpaint_vid/${now:%Y%m%d_%H%M%S}
+
+seed: 42
+device: cuda:0
+model_dtype: bfloat16
+
+video_path: /path/to/input_video.mp4 
+mask_path: /path/to/mask_video.npy
+dilate_mask: true   
+output_dir: ${hydra:run.dir}
+steps: 45
+show_progress: true
+
+denoiser:
+  name: wan
+  params:
+    model_cpu_offload: false      # choose either model_cpu_offload or sequential_cpu_offload
+    sequential_cpu_offload: false
+    attention_slicing: false
+    vae_slicing: false
+  cache_dir: null                 # path to cache the denoiser model, if null it will use the default huggingface cache dir 
+
+sampler:
+  name: ding
+
+conditioning:
+  prompts: ""
+  negative_prompts: ""
+  guidance_scale: 5.0
+  guidance_rescale: 0.0           # (specific to ltx) set to 0.0 to disable
+  n_videos_per_prompt: 1
+
+video:
+  target_height: 512              # multiple of 32 for ltx and 8 for wan
+  target_width: 928               # multiple of 32 for ltx and 8 for wan
+  target_num_frames: 97           # 97 (target_num_frames-1) multiple of 8 for ltx and 6 for wan, and inf or equal (n_frames: (n_seconds * fps) + 1)   
+  frame_rate: 24                  # Target frame rate for denoiser setup and output export
+
+

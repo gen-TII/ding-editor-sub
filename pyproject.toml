@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ding"
+version = "0.0.0"
+description = "ding algorithm for fast training-free inpainting using pre-trained diffusion models."
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+  "torch",
+  "torchvision",
+  "torchaudio",
+  "torchcodec",
+  "torchsde",
+  "transformers",
+  "diffusers[torch]",
+  "numpy",
+  "pillow",
+  "scikit-learn",
+  "matplotlib",
+  "PyYAML",
+  "einops",
+  "pandas",
+  "hydra-core",
+  "omegaconf",
+  "tqdm",
+  "click",
+  "rich",
+  "pyjwt[crypto]",
+  "wrapt",
+  "torchmetrics[image]",
+  "openai-clip",
+  "open-clip-torch",
+  "pytorch-fid",
+  "scikit-image",
+  "openai",
+  "sentencepiece",
+  "protobuf",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+ding = ["py.typed"]

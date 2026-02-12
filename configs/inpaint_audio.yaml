@@ -1,0 +1,43 @@
+# Default configuration for ding.runner.inpaint_audio
+
+defaults:
+  - _self_
+
+hydra:
+  run:
+    dir: outputs/inpaint_audio/${now:%Y%m%d_%H%M%S}
+
+seed: 42
+device: cuda:0
+model_dtype: bfloat16
+
+audio_path: /path/to/input_audio.wav
+mask_path:  /path/to/mask.npy
+bbox: null                        # [start_in_s, end_in_s]
+dilate_mask : false
+output_dir: ${hydra:run.dir}
+steps: 200
+show_progress: true
+
+denoiser:
+  name: sa1
+  params:
+    model_cpu_offload: false      # choose either model_cpu_offload or sequential_cpu_offload
+    sequential_cpu_offload: false
+    attention_slicing: false
+    vae_slicing: false
+  cache_dir: null                 # path to cache the denoiser model, if null it will use the default huggingface cache dir   
+
+sampler:
+  name: ding
+
+conditioning:
+  prompts: ""
+  negative_prompts: ""
+  guidance_scale: 7.0                  
+  n_wavs_per_prompt: 1
+
+audio:
+  audio_start_in_s: 0.0
+  audio_end_in_s: 47.0  
+
